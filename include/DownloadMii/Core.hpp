@@ -5,6 +5,26 @@
 //   | |__| | (_) \ V  V /| | | | | (_) | (_| | (_| | |  | | | |
 //   |_____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|_|  |_|_|_|
 //                                                              
-//   Â©2014-2015 Filiph SandstrÃ¶m & Contributors
+//   ©2014-2015 Filiph Sandström & Contributors
 //   Please see the LICENSE for more info!
-#include "DownloadMii.hpp"
+#pragma once
+#include "AppDownloader.hpp"
+#ifdef DOWNLOADMII_PLATFORM_3DS
+#include <3ds.h>
+#endif
+
+namespace DownloadMii {
+	class DownloadMii {
+	public:
+		DownloadMii();
+		~DownloadMii();
+
+		bool InternetConnection = false;
+#ifdef DOWNLOADMII_PLATFORM_3DS
+		httpcContext HttpcContext;
+#endif
+	private:
+		bool testInternetConnection();
+		AppDownloader appDownloader;
+	};
+}

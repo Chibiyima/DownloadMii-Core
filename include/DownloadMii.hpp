@@ -5,9 +5,13 @@
 //   | |__| | (_) \ V  V /| | | | | (_) | (_| | (_| | |  | | | |
 //   |_____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|_|  |_|_|_|
 //                                                              
-//   (c)2014-2015 Filiph Sandström & Contributors
+//   ©2014-2015 Filiph Sandström & Contributors
 //   Please see the LICENSE for more info!
 #pragma once
 
-#DEFINE DOWNLOADMII_CORE_VERSION "0.1"
-#DEFINE DOWNLOADMII_SERVER "www.downloadmii.com"
+#define DOWNLOADMII_CORE_VERSION "0.1"
+#define DOWNLOADMII_SERVER "www.downloadmii.com"
+
+/* Includes */
+#include "DownloadMii/Core.hpp"				//The Core
+#include "DownloadMii/AppDownloader.hpp"	//The AppDownloader

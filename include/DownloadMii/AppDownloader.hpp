@@ -5,6 +5,21 @@
 //   | |__| | (_) \ V  V /| | | | | (_) | (_| | (_| | |  | | | |
 //   |_____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|_|  |_|_|_|
 //                                                              
-//   Â©2014-2015 Filiph SandstrÃ¶m & Contributors
+//   ©2014-2015 Filiph Sandström & Contributors
 //   Please see the LICENSE for more info!
-#include "DownloadMii.hpp"
+#pragma once
+
+#include <zlib.h>
+
+namespace DownloadMii {
+	class AppDownloader {
+	public:
+		/* Functions */
+		AppDownloader();
+		~AppDownloader();
+
+		/* Vars */
+		bool connected = false;
+	private:
+	};
+}
