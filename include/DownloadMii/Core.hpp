@@ -7,8 +7,14 @@
 //                                                              
 //   ©2014-2015 Filiph Sandström & Contributors
 //   Please see the LICENSE for more info!
+//
+//	File name: Core.hpp
+//	Description: This file contains the string to put everything togheter.
+//
 #pragma once
+#include "main.h"
 #include "AppDownloader.hpp"
+#include "ServerConnector.hpp"
 #ifdef DOWNLOADMII_PLATFORM_3DS
 #include <3ds.h>
 #endif
@@ -19,12 +25,8 @@ namespace DownloadMii {
 		DownloadMii();
 		~DownloadMii();
 
-		bool InternetConnection = false;
-#ifdef DOWNLOADMII_PLATFORM_3DS
-		httpcContext HttpcContext;
-#endif
-	private:
-		bool testInternetConnection();
 		AppDownloader appDownloader;
+		ServerConnector serverConnector;
+	private:
 	};
 }

@@ -11,10 +11,15 @@
 #include "DownloadMii/AppDownloader.hpp"
 
 namespace DownloadMii {
-	AppDownloader::AppDownloader() {
-
+	AppDownloader::AppDownloader(){} //Shall not be used!
+	AppDownloader::AppDownloader(ServerConnector* ServerConnector) {
+		serverConnector = ServerConnector;
 	}
 	AppDownloader::~AppDownloader() {
 
+	}
+
+	void AppDownloader::LoadAppInfo(Application &app) {
+		//TODO: Load JSON from web server and deserialize it.
 	}
 }

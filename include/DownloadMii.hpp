@@ -14,4 +14,3 @@
 
 /* Includes */
 #include "DownloadMii/Core.hpp"				//The Core
-#include "DownloadMii/AppDownloader.hpp"	//The AppDownloader

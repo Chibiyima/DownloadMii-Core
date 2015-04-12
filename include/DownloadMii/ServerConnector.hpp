@@ -7,24 +7,28 @@
 //                                                              
 //   ©2014-2015 Filiph Sandström & Contributors
 //   Please see the LICENSE for more info!
-#include "main.h"
-#include "DownloadMii/Core.hpp"
-#ifndef DOWNLOADMII_PLATFORM_3DS
-#include <curl.h>
-#else
+//
+//	File name: AppDownloader.hpp
+//	Description: This file handles ALL server connections
+//
+#pragma once
+#ifdef DOWNLOADMII_PLATFORM_3DS
 #include <3ds.h>
+#else
+#include <curl.h>
 #endif
 
 namespace DownloadMii {
-	DownloadMii::DownloadMii() {
-		//Init Internet
-		serverConnector = ServerConnector();
+	class ServerConnector {
+	public:
+		ServerConnector();
+		void testInternetConnection();
 
-		//Init the AppDownloader
-		appDownloader = AppDownloader(&serverConnector);
-	}
-
-	DownloadMii::~DownloadMii() {
-
-	}
+		/* Vars */
+		bool InternetConnection = false;
+	private:
+#ifdef DOWNLOADMII_PLATFORM_3DS
+		httpcContext HttpcContext;
+#endif
+	};
 }
